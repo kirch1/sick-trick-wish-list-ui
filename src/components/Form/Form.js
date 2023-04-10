@@ -35,7 +35,7 @@ function Form({addTrick}) {
         <option value='stairs'>Stairs</option>
         <option value='pool'>Pool</option>
       </select>
-      <input value={tutorial} type="text" placeholder="Link to tutorial" onChange={e => setTutorial(e.target.value)}/>
+      <input value={tutorial} type="text" placeholder="Link to Tutorial" onChange={e => setTutorial(e.target.value)}/>
       <button onClick={e => sendIt(e)}>Send It!</button>
     </form>
   )
