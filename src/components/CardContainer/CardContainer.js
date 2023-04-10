@@ -1,9 +1,9 @@
 import Card from '../Card/Card';
-import './CardContainer.css'
+import './CardContainer.css';
 
 function CardContainer({tricks}) {
   
-  const cards = tricks.map(trick => <Card trick={trick}/>)
+  const cards = tricks.map(trick => <Card trick={trick}/>);
 
   return(
     <div className='card-container'>
