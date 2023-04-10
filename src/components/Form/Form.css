@@ -1,0 +1,15 @@
+form {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  height: 38px;
+  margin-bottom: 60px;
+}
+
+select,
+input,
+button {
+  font-weight: bold;
+  border-radius: 8px;
+  border: 1px solid black;
+}
