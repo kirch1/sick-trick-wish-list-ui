@@ -7,6 +7,18 @@ function Form({addTrick}) {
   const [obstacle, setObstacle] = useState('');
   const [tutorial, setTutorial] = useState('');
 
+  const sendIt = (e) => {
+    e.preventDefault();
+    const newTrick = {
+      stance: stance,
+      name: name,
+      obstacle: obstacle,
+      tutorial: tutorial,
+      id: Date.now()
+    }
+    addTrick(newTrick);
+  }
+
   return(
     <form>
       <select value={stance} onChange={e => setStance(e.target.value)}>
@@ -24,7 +36,7 @@ function Form({addTrick}) {
         <option value='pool'>Pool</option>
       </select>
       <input value={tutorial} type="text" placeholder="Link to tutorial" onChange={e => setTutorial(e.target.value)}/>
-      <button>Send It!</button>
+      <button onClick={e => sendIt(e)}>Send It!</button>
     </form>
   )
 }

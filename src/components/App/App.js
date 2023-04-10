@@ -13,6 +13,10 @@ class App extends Component {
     }
   }
 
+  addTrick = (newTrick) => {
+    this.setState({tricks: [...this.state.tricks, newTrick]})
+  }
+
   componentDidMount() {
     getTricks()
       .then(data => this.setState({tricks: data, errorMsg: ''}))
@@ -23,7 +27,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
-        <Form />
+        <Form addTrick={this.addTrick}/>
         {this.state.errorMsg ? <p>{this.state.errorMsg}</p> : <CardContainer tricks={this.state.tricks}/>}
       </div>
     );
