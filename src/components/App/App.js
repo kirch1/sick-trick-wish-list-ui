@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import './App.css';
 import getTricks from '../../api';
+import CardContainer from '../CardContainer/CardContainer';
 
 class App extends Component {
   constructor() {
@@ -19,6 +20,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
+        <CardContainer tricks={this.state.tricks}/>
       </div>
     );
   }
