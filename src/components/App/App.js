@@ -13,7 +13,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    getTricks().then(data => this.setState({tricks: data}))
+    getTricks()
+      .then(data => this.setState({tricks: data}))
+      .catch(error => {
+        console.log(error.toString())
+        this.setState({errorMsg: error.toString()})
+      });
   }
   
   render() {
