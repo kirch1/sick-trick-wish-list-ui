@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import './App.css';
+import getTricks from '../../api';
 
 class App extends Component {
   constructor() {
@@ -11,16 +12,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3001/api/v1/tricks')
-      .then(response => {
-        if(!response.ok) {
-          throw new Error(response)
-        }else {
-          return response.json();
-        }
-      })
-      .then(data => console.log(data))
-      .catch(error => console.log(error))
+    getTricks().then(data => this.setState({tricks: data}))
   }
   
   render() {
