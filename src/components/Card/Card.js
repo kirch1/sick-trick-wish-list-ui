@@ -1,10 +1,11 @@
 import './Card.css'
 
-function Card() {
-
+function Card({trick}) {
   return(
-    <div>
-
+    <div className='card'>
+      <p>{trick.name}</p>
+      <p>Obstacle: {trick.obstacle}</p>
+      <p>Link to Tutorial: {trick.tutorial}</p>
     </div>
   )
 }
