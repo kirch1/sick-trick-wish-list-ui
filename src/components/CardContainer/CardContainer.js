@@ -7,7 +7,7 @@ function CardContainer({tricks, deleteTrick}) {
 
   return(
     <div className='card-container'>
-      {cards}
+      {cards.length ? cards : <p className='error'>No Tricks to Show!</p>}
     </div>
   )
 }

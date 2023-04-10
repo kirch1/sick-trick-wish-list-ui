@@ -12,6 +12,19 @@ describe('Sick Trick Tests', () => {
         }
       ]
     })
+
+    cy.intercept('POST','http://localhost:3001/api/v1/tricks',{
+      statusCode: 201,
+      body: {
+          stance: "switch",
+          name: "ollie",
+          obstacle: "flatground",
+          tutorial: "https://www.example.com/watch?v=XGw3YkQmNig",
+          id: 2
+        }
+      
+    })
+
     cy.visit('http://localhost:3000');
   })
 
@@ -41,7 +54,7 @@ describe('Sick Trick Tests', () => {
       .get('input').first().type('mega flip')
       .get('select').last().select('ledge')
       .get('input').last().type('https://www.example.com/watch?v=XGw3YkQmNig')
-      .get('button').contains('Send It!')
+      .get('#submitButton').contains('Send It!')
     
     cy.get('form')
       .get('select').first().invoke("val").should("eq", "regular")
@@ -56,7 +69,7 @@ describe('Sick Trick Tests', () => {
       .get('input').first().type('ollie')
       .get('select').last().select('flatground')
       .get('input').last().type('https://www.example.com/watch?v=XGw3YkQmNig')
-      .get('button').click()
+      .get('#submitButton').click()
     
     cy.get('.card').last().contains('switch ollie')
     cy.get('.card').last().contains('Obstacle: flatground')

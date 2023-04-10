@@ -17,6 +17,14 @@ function Form({addTrick}) {
       id: Date.now()
     }
     addTrick(newTrick);
+    clearForm();
+  }
+
+  const clearForm = () => {
+    setStance('');
+    setName('');
+    setObstacle('');
+    setTutorial('');
   }
 
   return(
@@ -36,7 +44,7 @@ function Form({addTrick}) {
         <option value='pool'>Pool</option>
       </select>
       <input value={tutorial} type="text" placeholder="Link to Tutorial" onChange={e => setTutorial(e.target.value)}/>
-      <button onClick={e => sendIt(e)}>Send It!</button>
+      <button onClick={e => sendIt(e)} id='submitButton'>Send It!</button>
     </form>
   )
 }

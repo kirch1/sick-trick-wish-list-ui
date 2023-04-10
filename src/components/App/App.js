@@ -38,7 +38,7 @@ class App extends Component {
       <div className="App">
         <h1>Sick Trick Wish List</h1>
         <Form addTrick={this.addTrick}/>
-        {this.state.errorMsg ? <p>{this.state.errorMsg}</p> : <CardContainer tricks={this.state.tricks} deleteTrick={this.deleteTrick}/>}
+        {this.state.errorMsg ? <p className='error'>{this.state.errorMsg}</p> : <CardContainer tricks={this.state.tricks} deleteTrick={this.deleteTrick}/>}
       </div>
     );
   }
