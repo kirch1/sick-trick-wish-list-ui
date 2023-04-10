@@ -1,6 +1,11 @@
-import './Form.css'
+import { useState } from 'react';
+import './Form.css';
 
 function Form() {
+  const [stance, setStance] = useState('');
+  const [name, setName] = useState('');
+  const [obstacle, setObstacle] = useState('');
+  const [tutorial, settutorial] = useState('');
 
   return(
     <form>
@@ -10,7 +15,6 @@ function Form() {
         <option value='switch'>Switch</option>
       </select>
       <input type="text" name="name" placeholder="Name of Trick" />
-
       <select name="obstacle">
         <option value=''>Choose Your Obstacle</option>
         <option value='flatground'>Flatground</option>
